@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
+
+    resources :messages do
+    resources :comments,:controller=>"message_comments"
+    resource :category, :controller => 'message_categories'
+
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
