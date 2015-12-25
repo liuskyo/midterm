@@ -1,0 +1,26 @@
+<h1>宇宙災害情報網</h1>
+<table>
+	<tr>
+		<td>
+			災害名稱
+		</td>
+		 <td>
+		 	張貼時間
+		 </td>	
+	</tr>
+
+	<%@messages.each do |m|%>
+	<tr>
+		<td>
+		<%=link_to m.topic,message_path(m)%>
+		</td>
+		<td>
+		<%= m.created_at%>
+		</td>
+
+	</tr>
+
+<%end%>
+</table>
+
+<%=link_to "張貼災情",new_message_path%>

@@ -1,0 +1,18 @@
+<h2><%=@message.topic%></h2>
+
+<p><%=@message.content%></p>
+
+
+
+
+
+<%= form_for @message,:url=>message_comments_path(@message) do |f|%>
+<%= f.label :content%>
+<%= f.text_area :content%>
+
+<%= f.submit "回覆"%>
+<%end%>
+
+
+
+<p><%= link_to 'Back to index', messages_path %></p>
