@@ -5,7 +5,7 @@ class MessageCommentsController < ApplicationController
 		@comment=@message.comments.build(comment_params)
 		@comment.user=current_user
 		if @comment.save
-			redirect_to essay_path(@message)
+			redirect_to message_path(@message)
 		else
 			render redirect_to message_path(@message)
 		end
@@ -29,11 +29,11 @@ class MessageCommentsController < ApplicationController
 	end	
 
 	def destroy
-		@message=Message.find(params[:essay_id])
+		@message=Message.find(params[:message_id])
 		@comment=@message.comments.find(params[:id])
 		@comment.destroy
 		@message.save
-		redirect_to essay_path(@message)
+		redirect_to message_path(@message)
 	end
 
 

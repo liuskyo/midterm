@@ -17,6 +17,14 @@
 		<td>
 		<%= m.created_at%>
 		</td>
+		<%if current_user==m.user%>
+		<td>
+	<%= link_to "編輯文章",edit_message_path(m),:class=>"btn btn-default"%>
+	<%=link_to "刪除文章", message_path(m),:method=>:delete,:class=>"btn btn-danger"%>
+		</td>
+		<%end%>
+
+
 
 	</tr>
 
