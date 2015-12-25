@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
     resources :messages do
     resources :comments,:controller=>"message_comments"
-    resource :category, :controller => 'message_categories'
+    resources :category, :controller => 'message_categories'
 
   end
   # The priority is based upon order of creation: first created -> highest priority.

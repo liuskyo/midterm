@@ -4,4 +4,4 @@
 <%=f.label :content,"內容"%>
 <%=f.text_area :content%>
 
-
+<%= f.collection_select(:category_id, Category.all, :id, :name) %>
